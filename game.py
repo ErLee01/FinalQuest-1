@@ -19,8 +19,9 @@ HEIGHT = 800
 
 game_dir = path.join(path.dirname(__file__))
 
-print(game_dir)
+print(type(game_dir))
 
+'''
 main_menu_bkgrnd = pg.image.load(path.join(game_dir + "/MainMenuItems/bk.png")).convert()
 main_menu_begin = pg.image.load(path.join(game_dir + "/MainMenuItems/begin.png")).convert()
 main_menu_quit = pg.image.load(path.join(game_dir + "/MainMenuItems/quit.png")).convert()
@@ -114,3 +115,4 @@ while running:
     
 
     pygame.display.update() 
+'''
