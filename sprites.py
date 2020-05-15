@@ -1,7 +1,7 @@
 import pygame as pg
 from settings import *
 
-Php = 100
+#Php = 100
 
 Ehp = 50
  
@@ -36,7 +36,7 @@ class Player(pg.sprite.Sprite):
     def hitpts(self):
         if self.collide_with_enemy == True:
            Php - 10
-           print('Howdy')
+           print('Howdy')         
  
     def update(self):
         self.rect.x = self.x * TILESIZE

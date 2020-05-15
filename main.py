@@ -9,13 +9,17 @@ import string
 from os import path
 from settings import *
 from sprites import *
+
  
 posMap = ('map.txt', 'map1.txt')
  
+Php = 100
+
 mapVar = random.choice(posMap)
 #print(Php)
 
 class Game:
+    Php = 100
     def __init__(self):
         pg.init()
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
@@ -38,7 +42,8 @@ class Game:
         for row, tiles in enumerate(self.map_data):
             for col, tile in enumerate(tiles):
                 if tile == '1':
-                    Wall(self, col, row)
+                    self.wall = Wall(self, col, row)
+                    self.walls.add(self.wall)
                 if tile == 'P':
                     self.player = Player(self, col, row)
                 if tile == 'E':
@@ -60,6 +65,11 @@ class Game:
     def update(self):
         # update portion of the game loop
         self.all_sprites.update()
+        hits = pg.sprite.spritecollide(self.player, self.walls, False)
+        if hits:
+            Player.collide_with_walls
+            #Php = 100
+            Php -= 10
         print(Php)
  
     def draw_grid(self):
